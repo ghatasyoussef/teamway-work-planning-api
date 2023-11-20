@@ -91,7 +91,7 @@ Linting is implemented using **Duster Linting**. [![License: MIT](https://img.sh
 To generate documents to *docs* folder:
 
 ```bash
-phpdoc run -d app/ -t docs
+phpdoc run -d app/ -t docs/functional-doc
 ```
 Functional Documentation is implemented using **phpDocumentor**. [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 

@@ -17,7 +17,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(): Collection
+    public function index()
     {
         return User::self()->paginate();
     }
@@ -117,12 +117,12 @@ class UserController extends Controller
         ]);
         $user = User::where('id', $request->user_id)->first();
         if (! $user) {
-            abort(404, 'User not found!');
+            abort(404, "User not found!");
         }
         $user->is_admin = 1;
         $user->save();
 
-        return response()->json("User ({$user->email}) is promoted to admin successfully");
+        return "User ({$user->email}) is promoted to admin successfully";
     }
 
     /**
