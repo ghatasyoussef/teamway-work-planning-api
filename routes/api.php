@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserShiftController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,11 +23,16 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::group(['middleware' => ['adminauth']], function () {
         Route::post('users/make-admin', [UserController::class, 'makeAdmin']);
         Route::get('users/search', [UserController::class, 'search']);
+        Route::get('shifts/search', [UserShiftController::class, 'search']);
+
+        Route::apiResource('shifts', UserShiftController::class, ['except' => ['show', 'index']]);
 
     });
 
     Route::apiResource(
         'users', UserController::class,
     );
+
+    Route::apiResource('shifts', UserShiftController::class, ['only' => ['show', 'index']]);
 
 });

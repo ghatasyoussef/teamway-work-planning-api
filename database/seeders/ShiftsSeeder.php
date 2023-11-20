@@ -45,8 +45,6 @@ class ShiftsSeeder extends Seeder
 
         for ($i = 3; $i < 5; $i++) {
             for ($j = 0; $j < 2; $j++) {
-                print_r("{$i} - {$j}");
-
                 DB::table('user_shifts')->insert([
                     'worker_id' => $users[$j],
                     'day' => $days[$i],
