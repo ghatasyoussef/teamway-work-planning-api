@@ -33,7 +33,7 @@ class UserShiftController extends Controller
         // $numberOfShiftsPerDay = (count(config('shifts.shifts_per_day')) - 1);
 
         $validatedRequest = $request->validate([
-            'shift_number' => ['required', 'integer', 'min:0', 'max:3'],
+            'shift_number' => ['required', 'integer', 'min:0', 'max:2'],
             'worker_id' => ['required'],
             'day' => ['date',  'required'],
         ]);
